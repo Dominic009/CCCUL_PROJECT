@@ -1,0 +1,18 @@
+{<button className="toggleBtn z-40 absolute right-0 top-[13px] p-4 lg:hidden" onClick={clickHandler()}>
+<i class=" fa-solid fa-bars text-white"></i>
+</button>
+
+
+
+
+const clickHandler = () => {
+    const toggleBtn = document.querySelector(".toggleBtn");
+    const dropdown = document.querySelector(".menu");
+  
+    toggleBtn.addEventListener('click', () => {
+      dropdown.classList.toggle("-top-[10px]");
+    });
+  }
+  
+  // Call the clickHandler function to initialize the event listener
+  clickHandler(); }
