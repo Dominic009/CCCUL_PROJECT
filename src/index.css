@@ -13,7 +13,6 @@ span:hover{
 }
 
 ul li a:focus{
-    margin-top: 10px;
     border-bottom: solid 2px #e74c3c;
 }
 
