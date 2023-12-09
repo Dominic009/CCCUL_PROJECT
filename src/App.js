@@ -3,8 +3,12 @@ import hero from "./home_banner.89da2f166bc70828ce27.jpg";
 import credit from "./credit.svg";
 import SvgComponent from "./SvgComponent";
 import founder from "./Founder.png";
+import { useState } from "react";
 
 function App() {
+
+  const [isOpen , setIsOpen] = useState(false);
+
   return (
     <div className="App relative h-[100%]">
       <nav className="w-full h-12 bg-[#ebf1f3] flex justify-between align-middle sticky invisible lg:visible top-0 z-50">
@@ -44,12 +48,12 @@ function App() {
         </div>
       </nav>
 
-      <div className=" absolute top-0 md:top-0 lg:top-12 w-full h-[383px] md:h-[335px] bg-no-repeat bg-cover bg-center bg-[url(https://www.cccul.com/static/media/home_banner.89da2f166bc70828ce27.jpg)]">
+      <div className="absolute top-0 md:top-0 lg:top-12 w-full h-[383px] md:h-[335px] bg-no-repeat bg-cover bg-center bg-[url(https://www.cccul.com/static/media/home_banner.89da2f166bc70828ce27.jpg)]">
         <div className="w-full md:h-[335px] h-[383px] backdrop-brightness-50 backdrop-saturate-100 backdrop-blur-[2px] bg-[rgba(36,34,105,0.2)]"></div>
 
         {/* opacity has been set to 0 for mobile version */}
 
-        <div className=" absolute right-0 opacity-0 md:opacity-100 bg-white lg:bg-transparent w-full h-screen z-50 pt-8 lg:w-[715px] lg:-top-[10px]">
+        <div className={`absolute right-0 opacity-0 md:opacity-0 bg-white lg:bg-transparent w-full h-screen z-30 pt-8 lg:w-[715px] lg:-top-[10px] ${isOpen ? "opacity-100" : "opacity-0"}`}>
           <ul
             className="menu flex p-2 text-black text-[14px] font-Lato font-extrabold flex-col gap-6 
            md:flex-col lg:flex-row md:gap-6 md:bg-transparent
@@ -89,10 +93,16 @@ function App() {
         </div>
 
         {/* menu icon  */}
-        <div className="z-40 absolute right-7 top-[5px] p-4 lg:hidden">
-          <button className="toggleBtn">
+        <div className="z-40 absolute right-7 top-[5px] p-4 lg:hidden" onClick={() => {
+          if(isOpen){
+            setIsOpen(false);
+          } else {
+            setIsOpen(true);
+          }
+        }}>
+          
             <i className=" fa-solid fa-bars fa-lg text-slate-400"></i>
-          </button>
+       
         </div>
 
         <div className=" font-bold text-4xl mt-[-170px] text-gray-300 absolute text-center w-full font-lato pr-8 pl-8 bottom-24 ">
@@ -121,7 +131,7 @@ function App() {
 
           {/* section 1 */}
           <div className="py-[5px] px-6 flex justify-center bg-white rounded-xl">
-            <div className="absolute w-[80px] h-[80px] rounded-full -top-[48px] bg-[#242269] flex justify-center items-center">
+            <div className="absolute w-[80px] h-[80px] lg:w-[80px] md:w-[70px] lg:h-[80px] md:h-[70px] rounded-full -top-[48px] bg-[#242269] flex justify-center items-center">
               <i class="fa-solid fa-piggy-bank text-4xl text-onPrimary text-white"></i>
             </div>
 
@@ -145,7 +155,7 @@ function App() {
           {/* section 2 */}
           <div className="py-6 px-6 flex justify-center bg-white rounded-xl relative">
 
-            <div className="absolute -top-[48px] w-[80px] h-[80px] rounded-full bg-[#242269] flex justify-center items-center">
+            <div className="absolute -top-[48px] w-[80px] h-[80px] lg:w-[80px] md:w-[70px] lg:h-[80px] md:h-[70px] rounded-full bg-[#242269] flex justify-center items-center">
               <i class="fa-solid fa-sack-dollar text-4xl text-onPrimary text-white"></i>
             </div>
 
@@ -168,7 +178,7 @@ function App() {
 
           {/* section 3 */}
           <div className="py-6 px-6 flex justify-center bg-white rounded-xl relative">
-            <div className="absolute -top-[48px] w-[80px] h-[80px] rounded-full bg-[#242269] flex justify-center items-center">
+            <div className="absolute -top-[48px] w-[80px] h-[80px] lg:w-[80px] md:w-[70px] lg:h-[80px] md:h-[70px] rounded-full bg-[#242269] flex justify-center items-center">
               <i class="fa-solid fa-truck-medical text-4xl text-onPrimary text-white"></i>
             </div>
 
@@ -196,14 +206,14 @@ function App() {
           {/* fourth section */}
           <div className=" py-8 md:py-[24px] px-6 flex md:items-center bg-white rounded-sm ">
 
-            <div class=" text-left flex flex-col justify-center md:w-[690px]">
+            <div class=" text-left flex flex-col justify-center md:w-[500px]">
 
               <h1 className="font-bold mt-2 text-[4vh] text-[#474747] md:text-[4vh] lg:text-[5vh] md:py-2">Fr. Charles J. Young</h1>
 
               <h1 className=" font-bold text-lg mt-2 mb-2 text-[#474747] md:text-[2.5vh] lg:text-[2.8vh] md:py-2">
                 Founder of Dhaka Credit
               </h1>
-              <p className="text-md md:text-[2.1vh] lg:text-[2.8vh] text- font-normal text-[#474747] ">
+              <p className="text-md md:text-[2.1vh] lg:text-[2.8vh] font-normal text-[#474747] ">
                 The pioneer of the credit union movement in Bangladesh,
                 Fr.Charles J. Young CSC was born in May 3rd 1904, in New York,
                 USA. His full name is Fr. Charles Joseph Young CSC. He was the
@@ -220,7 +230,7 @@ function App() {
             </div>
           </div>
 
-          <div className=" md:w-[500px] h-[400px] md:h-[550px] mt-4 mb-4 shrink-0  bg-no-repeat bg-contain bg-center bg-[url(https://www.cccul.com/static/media/index_founder%20copy.bd5ebf79f4a400f7f529.png)] "></div>
+          <div className=" md:w-[400px] h-[300px] md:h-[550px] mt-4 mb-4 shrink-0  bg-no-repeat bg-contain bg-center bg-[url(https://www.cccul.com/static/media/index_founder%20copy.bd5ebf79f4a400f7f529.png)] "></div>
         </div>
       </section>
 
@@ -229,12 +239,12 @@ function App() {
 
 
       <footer className="">
-        <div className="bg-white w-full h-[320px] mt-[950px] py-[40px] px-[12px] block">
+        {/* <div className="bg-white w-full h-[320px] mt-[950px] py-[40px] px-[12px] block">
           
 
 
 
-        </div>
+        </div> */}
       </footer>
     </div>
   );
