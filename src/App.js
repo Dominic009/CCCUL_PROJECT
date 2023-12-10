@@ -53,7 +53,7 @@ function App() {
 
         {/* opacity has been set to 0 for mobile version */}
 
-        <div className={`absolute right-0 opacity-0 md:opacity-0 bg-white lg:bg-transparent w-full h-screen z-30 pt-8 lg:w-[715px] lg:-top-[10px] ${isOpen ? "opacity-100" : "opacity-0"}`}>
+        <div className={`absolute right-0 opacity-0 lg:opacity-100 md:opacity-0 bg-white lg:bg-transparent w-full h-screen z-30 pt-8 lg:w-[715px] lg:-top-[10px] ${isOpen ? "opacity-100" : "opacity-0"}`}>
           <ul
             className="menu flex p-2 text-black text-[14px] font-Lato font-extrabold flex-col gap-6 
            md:flex-col lg:flex-row md:gap-6 md:bg-transparent
@@ -105,6 +105,16 @@ function App() {
        
         </div>
 
+        {/* <div className="w-full h-14 bg-white absolute z-20 top-0">
+
+        </div> */}
+
+
+
+
+
+
+
         <div className=" font-bold text-4xl mt-[-170px] text-gray-300 absolute text-center w-full font-lato pr-8 pl-8 bottom-24 ">
           The Christian Co-operative Credit Union Ltd., Dhaka
           <p className=" text-sm font-normal mt-4">
@@ -113,7 +123,7 @@ function App() {
           </p>
         </div>
 
-        <span className=" absolute top-[19px] md:top-[26px] md:left-[140px] left-[88px] font-semibold text-[20px] md:text-[23px] text-white font-Lato">
+        <span className=" absolute top-[19px] md:top-[26px] md:left-[140px] left-[88px] font-semibold text-[20px] md:text-[23px] text-white font-Lato z-50">
           Dhaka Credit
         </span>
         <SvgComponent />
@@ -146,7 +156,7 @@ function App() {
                 due to any situation.
               </p>
 
-              <span class="text-[#474747] opacity-70 font-semibold text-md md:text-[2.5vh]  ">
+              <span class="text-[#474747] opacity-70 font-semibold text-md md:text-[2.5vh] block cursor-pointer hover:  ">
                 View All
               </span>
             </div>
@@ -200,20 +210,20 @@ function App() {
         </div>
 
         {/* Founder column */}
-        <div className="w-full flex flex-col flex-col-reverse md:flex-row mt-4 md:items-center relative">
+        <div className="w-full flex flex-col flex-col-reverse md:flex-row mt-4 md:items-center relative md:justify-between">
 
 
           {/* fourth section */}
-          <div className=" py-8 md:py-[24px] px-6 flex md:items-center bg-white rounded-sm ">
+          <div className=" py-8 md:py-[24px] px-6 flex md:items-center bg-white rounded-sm w-[800px]">
 
-            <div class=" text-left flex flex-col justify-center md:w-[500px]">
+            <div class=" text-left flex flex-col justify-center md:w-[600px] flex-1">
 
               <h1 className="font-bold mt-2 text-[4vh] text-[#474747] md:text-[4vh] lg:text-[5vh] md:py-2">Fr. Charles J. Young</h1>
 
               <h1 className=" font-bold text-lg mt-2 mb-2 text-[#474747] md:text-[2.5vh] lg:text-[2.8vh] md:py-2">
                 Founder of Dhaka Credit
               </h1>
-              <p className="text-md md:text-[2.1vh] lg:text-[2.8vh] font-normal text-[#474747] ">
+              <p className="text-md md:text-[2vh] lg:text-[2.5vh] font-normal text-[#474747] ">
                 The pioneer of the credit union movement in Bangladesh,
                 Fr.Charles J. Young CSC was born in May 3rd 1904, in New York,
                 USA. His full name is Fr. Charles Joseph Young CSC. He was the
@@ -230,7 +240,7 @@ function App() {
             </div>
           </div>
 
-          <div className=" md:w-[400px] h-[300px] md:h-[550px] mt-4 mb-4 shrink-0  bg-no-repeat bg-contain bg-center bg-[url(https://www.cccul.com/static/media/index_founder%20copy.bd5ebf79f4a400f7f529.png)] "></div>
+          <div className=" w-[400px] md:w-[500px] h-[300px] md:h-[550px] mt-4 mb-4 shrink-0  bg-no-repeat bg-contain bg-center bg-[url(https://www.cccul.com/static/media/index_founder%20copy.bd5ebf79f4a400f7f529.png)] "></div>
         </div>
       </section>
 
